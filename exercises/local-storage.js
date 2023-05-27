@@ -38,3 +38,19 @@
  */
 
 // Your code goes here...
+const container = document.querySelector('.cardsContainer');
+const list= localStorage.setItem()
+
+const changeBG = (event) => {
+    const item = event.target;
+    const id = item.id;
+    if (Array.from(item.classList).includes('card')) {
+        if (item.dataset.fav === 'false') {
+            item.style.backgroundColor = 'red';
+            localStorage.setItem(id, 'true')
+        } else {
+            item.style.backgroundColor = 'white'
+            
+        }
+    }
+}
