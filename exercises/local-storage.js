@@ -39,7 +39,6 @@
 
 // Your code goes here...
 const container = document.querySelector('.cardsContainer');
-const list= localStorage.setItem()
 
 const changeBG = (event) => {
     const item = event.target;
