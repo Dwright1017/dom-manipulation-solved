@@ -50,16 +50,16 @@ const favs =  document.getElementById("favs")
 // Your code goes here
 const updateCollections = (id, direction) => {
   const item = document.getElementById(id)
+  const icon = item.firstChild.nextSibling;
+  console.log(icon);
   if (direction === 'toMain') {
-    item.parentElement.remove()
     main.appendChild(item)
-    item.classList.remove("fa-heart-crack")
-    item.classList.add("fa-heart-circle-plus")
+    icon.classList.add('fa-heart-circle-plus');
+    icon.classList.remove('fa-heart-crack');
   } else if (direction === 'toFavs') {
-    item.parentElement.remove()
     favs.appendChild(item)
-    item.classList.remove("fa-heart-circle-plus")
-    item.classList.add("fa-heart-crack")
+    icon.classList.add('fa-heart-crack');
+    icon.classList.remove('fa-heart-circle-plus');
   }
 }
 

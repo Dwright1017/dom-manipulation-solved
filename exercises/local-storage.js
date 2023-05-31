@@ -48,7 +48,7 @@ const changeBG = (event) => {
             item.style.backgroundColor = 'red';
             localStorage.setItem(id, 'true')
         } else {
-            item.style.backgroundColor = 'white'
+            item.style.backgroundColor = 'white';
             
         }
     }
