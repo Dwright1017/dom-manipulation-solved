@@ -43,15 +43,12 @@ const sortBtn = document.querySelectorAll('.sortBtn');
 const sortData = (direction) => {
     const container = document.getElementById('main');
     const sortArr = Array.from(allItems).sort((a,b) => {
-        if (direction === 'asc') {
-            if (a > b) return 1;
-            else if (a < b) return -1;
-            else return 0;
-        } else {
-            return allItems.sort()
-        }
-    })
+        const idA = parseInt(a.id);
+        const idB = parseInt(b.id);
+        return direction === 'asc' ? idA - idB : idB - idA;
+        });
     console.log(sortArr);
+    sortArr.forEach(item => container.append(item));
 }
 
 

@@ -40,16 +40,28 @@
 // Your code goes here...
 const container = document.querySelector('.cardsContainer');
 
-const changeBG = (event) => {
-    const item = event.target;
+
+container.addEventListener('click', (event => {
+    const item = event.target
     const id = item.id;
     if (Array.from(item.classList).includes('card')) {
         if (item.dataset.fav === 'false') {
             item.style.backgroundColor = 'red';
-            localStorage.setItem(id, 'true')
+            item.dataset.fav = 'true';
+            localStorage.setItem(id, 'true');
         } else {
             item.style.backgroundColor = 'white';
-            
+            localStorage.removeItem(id)
         }
     }
-}
+}));
+
+document.querySelectorAll('.card').forEach(card => {
+    const id = card.id;
+    const favorite = localStorage.getItem(id) === 'true';
+
+    if (favorite) {
+        card.style.backgroundColor = 'red';
+        card.dataset.fav = 'true';
+    }
+})
