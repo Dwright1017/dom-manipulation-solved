@@ -51,7 +51,6 @@ const favs =  document.getElementById("favs")
 const updateCollections = (id, direction) => {
   const item = document.getElementById(id)
   const icon = item.firstChild.nextSibling;
-  console.log(icon);
   if (direction === 'toMain') {
     main.appendChild(item)
     icon.classList.add('fa-heart-circle-plus');

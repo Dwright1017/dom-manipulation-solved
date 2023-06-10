@@ -51,6 +51,7 @@ container.addEventListener('click', (event => {
             localStorage.setItem(id, 'true');
         } else {
             item.style.backgroundColor = 'white';
+            item.dataset.fav = 'false';
             localStorage.removeItem(id)
         }
     }
